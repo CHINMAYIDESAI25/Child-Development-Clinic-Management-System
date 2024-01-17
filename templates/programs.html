@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Programs</title>
+    <style>
+        
+       nav {
+  background: linear-gradient(to bottom, #006699 0%, #66ccff 100%);
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  display: inline-block;
+  width: 18%;
+  height: 100px;
+  margin: 1%;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-color: rgb(250, 254, 254);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  font-family: "Times", sans-serif; /* set the desired font */
+}
+
+.card .icon {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.card .program-name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.card .description {
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.card:hover {
+  transform: scale(0.95);
+  transition: all 0.3s;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="navbar">
+        <h2>Programs</h2>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        {% for program in programs %}
+          <div class="card">
+            <div class="icon">
+              <i class="{{ program.icon }}"></i>
+            </div>
+            <div class="content">
+              <h3>{{ program.program_name }}</h3>
+              <p>{{ program.description }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+  
+  
+  
+</html>
